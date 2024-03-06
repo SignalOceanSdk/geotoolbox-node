@@ -1,5 +1,5 @@
 import { geoArea } from "d3-geo";
-import { featurecollection } from "../utils/featurecollection.js";
+import { featurecollection } from "../utils/featurecollection.mjs";
 
 /**
  * Dissolve multipart geometries to single part geometries.

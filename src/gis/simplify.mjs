@@ -1,13 +1,13 @@
 import { topology } from "topojson-server";
 import { feature } from "topojson-client";
-import { featurecollection } from "../utils/featurecollection.js";
+import { featurecollection } from "../utils/featurecollection.mjs";
 import { presimplify, quantile, simplify as simple } from "topojson-simplify";
 
 const topojson = Object.assign(
   {},
   { topology, presimplify, quantile, simple, feature }
 );
-import { union } from "./union.js";
+import { union } from "./union.mjs";
 
 /**
  * Simplify geometries of a GeoJSON FeatureCollection / Array of Features / Array of Geometries

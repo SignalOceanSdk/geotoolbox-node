@@ -1,27 +1,27 @@
-import { str2fun } from "./str2fun.js";
+import { remove } from "./remove.mjs";
 
 /**
- * Filter a GeoJSON FeatureCollection by its attribute table.
+ * Keep only the specified fields in the attribute table of the GeoJSON FeatureCollection.
  * This function returns a new object and does not modify the initial object.
  *
  * Example: {@link https://observablehq.com/@neocartocnrs/handle-properties?collection=@neocartocnrs/geotoolbox Observable notebook}
  *
  * @param {object} obj - An object with the following properties
  * @param {object} obj.x - The targeted GeoJSON FeatureCollection
- * @param {string} obj.expression - The name of the field to be filtered
+ * @param {string[]} obj.fields - The name of the fields to be kept
  * @returns {object} - The new GeoJSON FeatureCollection
  *
+ * @see the <code>remove</code> function to remove the specified fields
+ *
  * @example
- * geo.select({
+ * geo.keep({
  *     x: world,
- *     expression: "pop2022 >= 100000",
+ *     field: ["ISO3", "pop2020"],
  * })
  *
  */
-export function select({ x, expression }) {
-  let features = [...x.features];
-
-  // Get keys
+export function keep({ x, fields }) {
+  // Get all keys
   let keys = [];
   x.features
     .map((d) => d.properties)
@@ -30,13 +30,7 @@ export function select({ x, expression }) {
     });
   keys = Array.from(new Set(keys.flat()));
 
-  keys.forEach((d) => {
-    expression = expression.replace(d, `d.properties.${d}`);
-  });
-
-  expression = "d => " + expression;
-
-  let output = JSON.parse(JSON.stringify(x));
-  output.features = features.filter(str2fun(expression));
-  return output;
+  // Fields to be removed
+  let diff = keys.filter((k) => !fields.includes(k));
+  return remove({ x, field: diff });
 }

@@ -1,9 +1,9 @@
-import { type } from "../utils/type.js";
-import { dissolve } from "./dissolve.js";
+import { type } from "../utils/type.mjs";
+import { dissolve } from "./dissolve.mjs";
 import { topology } from "topojson-server";
 import { merge } from "topojson-client";
 const topojson = Object.assign({}, { topology, merge });
-import { featurecollection } from "../utils/featurecollection.js";
+import { featurecollection } from "../utils/featurecollection.mjs";
 
 /**
  * Takes a FeatureCollection or a set of Features or Geometries and merge them

@@ -8,7 +8,7 @@
  *
  */
 
-import { featurecollection } from "../utils/featurecollection.js";
+import { featurecollection } from "../utils/featurecollection.mjs";
 
 export function nodes(x) {
   x = featurecollection(x);

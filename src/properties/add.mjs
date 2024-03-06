@@ -1,5 +1,5 @@
 // Add
-import { str2fun } from "./str2fun.js";
+import { str2fun } from "./str2fun.mjs";
 
 /**
  * Add a new field in the attribute table of the GeoJSON FeatureCollection.

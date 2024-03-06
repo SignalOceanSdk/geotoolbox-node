@@ -1,8 +1,8 @@
 import initGeosJs from "geos-wasm";
-import { geojsonToGeosGeom } from "../helpers/geojsonToGeosGeom";
-import { geosGeomToGeojson } from "../helpers/geosGeomToGeojson";
-import { km2deg } from "../utils/km2deg.js";
-import { featurecollection } from "../utils/featurecollection.js";
+import { geojsonToGeosGeom } from "../helpers/geojsonToGeosGeom.mjs";
+import { geosGeomToGeojson } from "../helpers/geosGeomToGeojson.mjs";
+import { km2deg } from "../utils/km2deg.mjs";
+import { featurecollection } from "../utils/featurecollection.mjs";
 
 /**
  * Build a buffer with GEOS-WASM around a FeatureCollection or a set of Features or Geometries.

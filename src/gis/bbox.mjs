@@ -4,7 +4,7 @@
 // import * as d3geo from "d3-geo";
 import { geoEquirectangularRaw, geoBounds } from "d3-geo";
 const d3 = Object.assign({}, { geoEquirectangularRaw, geoBounds });
-import { featurecollection } from "../utils/featurecollection.js";
+import { featurecollection } from "../utils/featurecollection.mjs";
 
 /**
  * Compute a geographic bounding box for a given FeatureCollection / array of Features / array of Geometries.

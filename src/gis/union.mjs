@@ -1,7 +1,7 @@
 import initGeosJs from "geos-wasm";
-import { geojsonToGeosGeom } from "../helpers/geojsonToGeosGeom";
-import { geosGeomToGeojson } from "../helpers/geosGeomToGeojson";
-import { featurecollection } from "../utils/featurecollection.js";
+import { geojsonToGeosGeom } from "../helpers/geojsonToGeosGeom.mjs";
+import { geosGeomToGeojson } from "../helpers/geosGeomToGeojson.mjs";
+import { featurecollection } from "../utils/featurecollection.mjs";
 
 /**
  * Takes a FeatureCollection or a set of Features or Geometries containing Polygons and merge them with GEOS-WASM.

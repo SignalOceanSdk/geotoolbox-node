@@ -1,7 +1,7 @@
 import initGeosJs from "geos-wasm";
-import { geojsonToGeosGeom } from "../helpers/geojsonToGeosGeom";
-import { geosGeomToGeojson } from "../helpers/geosGeomToGeojson";
-import { featurecollection } from "../utils/featurecollection.js";
+import { geojsonToGeosGeom } from "../helpers/geojsonToGeosGeom.mjs";
+import { geosGeomToGeojson } from "../helpers/geosGeomToGeojson.mjs";
+import { featurecollection } from "../utils/featurecollection.mjs";
 
 /**
  * Densify a geoJSON with GEOS-WASM
@@ -14,7 +14,7 @@ import { featurecollection } from "../utils/featurecollection.js";
  * @param {number} options.dist - The minimal distance between nodes
  *
  */
-export async function densify(x, options = { dist: 1 }) {
+export async function densify(x, options = { tolerance: 1 }) {
   // TODO: This will create a new GEOS instance with every call
   //       to geosunion. Ideally, we should create a single instance
   //       when the library is loaded and then just pass it around

@@ -1,7 +1,7 @@
 import { topology } from "topojson-server";
 import { neighbors, mesh } from "topojson-client";
 const topojson = Object.assign({}, { topology, neighbors, mesh });
-import { featurecollection } from "../utils/featurecollection.js";
+import { featurecollection } from "../utils/featurecollection.mjs";
 import * as d3array from "d3-array";
 const d3 = Object.assign({}, d3array);
 

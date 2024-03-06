@@ -1,7 +1,7 @@
 import initGeosJs from "geos-wasm";
-import { geojsonToGeosGeom } from "../helpers/geojsonToGeosGeom";
-import { geosGeomToGeojson } from "../helpers/geosGeomToGeojson";
-import { featurecollection } from "./featurecollection.js";
+import { geojsonToGeosGeom } from "../helpers/geojsonToGeosGeom.mjs";
+import { geosGeomToGeojson } from "../helpers/geosGeomToGeojson.mjs";
+import { featurecollection } from "./featurecollection.mjs";
 
 /**
  * Returns a geoJSON which is valid according to the GEOS validity rules, and preserves as much as possible of the input geometry's extent, dimension, and structure.
